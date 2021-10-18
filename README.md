@@ -6,7 +6,12 @@
 - Nội dung bao gồm: Form thông tin nhân lực vận chuyên, tạo phiếu vận chuyển, list view,...
 - Ngôn ngữ sử dụng: Python, XML, ... 
 
-Ngày bắt đầu: <b>06/10/2021</b> -> Ngày kết thúc ..
+## Ngày bắt đầu: 
+  <b>06/10/2021</b> -> <b>06/10/2021</b>
 
-Người thực hiện: Trần Đình Hiếu - Đỗ Đức Anh - Lê Bình Yên - Hồ Thị Yến Nhi
+## Người thực hiện: 
+1 Trần Đình Hiếu 
+2 Đỗ Đức Anh 
+3 Lê Bình Yên 
+4 Hồ Thị Yến Nhi
 
