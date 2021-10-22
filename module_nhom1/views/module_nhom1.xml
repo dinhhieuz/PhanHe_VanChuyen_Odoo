@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="shipper_nhom1_view" model="ir.ui.view">
+            <field name="name">shipper.nhom1.view</field>
+            <field name="model">shipper.nhom1</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class ="oe_title">
+                            <group>
+                                <group>
+                                <h1><field name = "name" readonly ="1"/></h1>
+                                </group>
+                                <group>
+                                    <field name="avatar" string="Avatar" widget="image"/>
+                                </group>
+                            </group>
+                           <group>
+                                    <field name ="ten"/>
+                                    <field name ="gioitinh"/>
+                                    <field name ="ngaysinh"/>
+                                    <field name ="diachi"/>
+                                    <field name ="sdt"/>
+                                    <field name ="cmnd"/>
+                                    <field name="covid"/>
+                            </group>
+                        </div>
+                        <notebook>
+                            <page name="work" string="Công việc">
+                                <group>
+                                    <group>
+                                        <field name="nameprivate"/>
+                                        <field name ="trangthai"/>
+                                    </group>
+                                    <group>
+                                        <label for="mota" colspan="3"/>
+                                        <field name="mota" colspan="2" nolabel="1"/>
+                                    </group>
+                                </group>
+							</page>
+							<page name="image" string="Hình ảnh">
+								<group>
+									<group string="Hình ảnh">
+										<field name="image" string="Hình ảnh" widget="image"/>
+									</group>
+								</group>
+							</page>
+						</notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="shipper_nhom1_tree_view" model="ir.ui.view">
+            <field name="name">shipper.nhom1.view</field>
+            <field name="model">shipper.nhom1</field>
+            <field name="arch" type="xml">
+                <tree string="Module" default_order="create_date desc">
+                    <field name="name"/>
+                    <field name="ten"/>
+                    <field name="gioitinh"/>
+                    <field name ="trangthai"/>
+                    <button name="custom_remove" type="object" string="Remove" class="oe_highlight"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id ="module_search_view" model = "ir.ui.view">
+            <field name="name">module_search_view</field>
+            <field name="model">shipper.nhom1</field>
+            <field eval="10" name="priority"/>
+            <field name="arch" type="xml">
+                <search string="Module Search">
+                    <field name="name" />
+                    <field name="ten"/>
+                    <field name ="trangthai"/>
+                    <field name ="nameprivate"/>
+                    <field name ="trangthai"/>
+                    <group expand='0' string='Filters'>
+                        <filter name="ĐANG_filter" string="Đang giao hàng" domain="[('trangthai', '=',  'Đang giao hàng')]"/>
+                        <filter name="CHO_filter" string="Chờ đơn hàng" domain="[('trangthai', '=',  'Chờ đơn hàng')]"/>
+
+                    </group>
+                    <group expand='0' string='Group by...'>
+                        <filter string='Trạng thái' name="status_group" context="{'group_by': 'trangthai'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <menuitem id="module_root"
+                    name="Module"
+                    sequence="1"/>
+        <!-- Tình trạng -->
+        <menuitem id="shipper_root"
+                    name="Tình Trạng"
+                    parent="module_root"
+                    sequence="2"/>
+        <!-- Shipper-->
+        <menuitem id ="ql_root"
+                  name ="Danh sách"
+                  parent= "module_root"
+                  sequence="3"/>
+
+
+    </data>
+</odoo>
