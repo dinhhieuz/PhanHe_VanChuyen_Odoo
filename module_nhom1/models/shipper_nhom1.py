@@ -14,8 +14,8 @@ class nhom1(models.Model):
     cmnd = fields.Char("CCMND")
     mota = fields.Text('Mô tả công việc')
     covid = fields.Boolean('Đã tiêm Covid', default=False)
-    gioitinh = fields.Selection([('Nam', 'Nam'), ('Nữ', 'Nữ')], string='Giới tính', default='')
-    trangthai = fields.Selection([('Đang giao hàng', 'Đang giao hàng'), ('Chờ đơn hàng', 'Chờ đơn hàng')], string='Trạng thái', default='')
+    gioitinh = fields.Selection([('nam', 'Nam'), ('nu', 'Nữ')], string='Giới tính', default='nam')
+    trangthai = fields.Selection([('danggiaohang', 'Đang giao hàng'), ('chogiaohang', 'Chờ đơn hàng')], string='Trạng thái', default='')
     nameprivate = fields.Char('Tên công việc')
     image = fields.Binary("Hình ảnh đơn hàng")
 

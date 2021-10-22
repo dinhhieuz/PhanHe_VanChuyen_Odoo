@@ -13,18 +13,22 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
+    'sequence': -150,
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','stock'],
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         'data/data.xml',
         'views/module_nhom1.xml',
         'views/module.xml',
         'views/dang.xml',
-        'views/cho.xml'
+        'views/cho.xml',
+        'views/phieugiaohang.xml'
+
+
     ],
-    # only loaded in demonstration mode nè
+    # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],

@@ -23,5 +23,11 @@
                     parent="ql_root"
                     action = "shipper_action"
                     sequence="10"/>
+        <menuitem id="module_kho"
+                    name="Phiếu giao hàng"
+                    parent="kho_root"
+                    action = "shipper_action"
+                    sequence="13"/>
+
     </data>
 </odoo>
