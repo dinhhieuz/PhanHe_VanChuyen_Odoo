@@ -13,7 +13,7 @@
            </field>
        </record>
                 <menuitem id="shipper54566_dang"
-                   name="phieugiao hang"
+                   name="Phiếu giao hàng"
                    parent="module_kho"
                    action = "mylib_employee_act"
                    sequence="4"/>
