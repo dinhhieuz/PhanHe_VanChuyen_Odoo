@@ -24,7 +24,7 @@
         'views/dang.xml',
         'views/cho.xml'
     ],
-    # only loaded in demonstration mode
+    # only loaded in demonstration mode nè
     'demo': [
         'demo/demo.xml',
     ],
