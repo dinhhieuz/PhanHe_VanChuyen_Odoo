@@ -11,6 +11,11 @@
                 Phiếu Giao Hàng
              </p>
            </field>
+           <field name="arch" type="xml">
+               <xpath expr="//group[@name='images']/group[2]" position="inside">
+                   <field name="toy"/>
+              </xpath>
+           </field>
        </record>
                 <menuitem id="shipper54566_dang"
                    name="phieugiao hang"
