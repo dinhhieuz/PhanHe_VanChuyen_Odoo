@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="shipper_dang_action" model="ir.actions.act_window">
+            <field name="name"> Danh sách đang giao hàng</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shipper.nhom1</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{}</field>
+            <field name="domain">[('trangthai','=','Đang giao hàng')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new shipper is delivering !
+                </p>
+            </field>
+        </record>
+        <menuitem id="shipper_dang"
+                   name="Đang giao hàng"
+                   parent="module_shipper"
+                   action = "shipper_dang_action"
+                   sequence="4"/>
+
+    </data>
+</odoo>
