@@ -90,22 +90,27 @@
         </record>
 
         <menuitem id="module_root"
-                    name="Shipper"
+                    name="Vận chuyển"
                     sequence="1"/>
-        <!-- Tình trạng -->
-        <menuitem id="shipper_root"
-                    name="Tình Trạng"
-                    parent="module_root"
-                    sequence="2"/>
-        <!-- Shipper-->
-        <menuitem id ="ql_root"
-                  name ="Danh sách"
-                  parent= "module_root"
-                  sequence="3"/>
+        <!--Phiếu giao hàng-->
         <menuitem id ="kho_root"
                   name ="Phiếu giao hàng"
                   parent= "module_root"
-                  sequence="17"/>
-
+                  sequence="2"/>
+        <!-- Shipper -->
+        <menuitem id="shipper_root"
+                    name="Shipper"
+                    parent="module_root"
+                    sequence="3"/>
+        <!--Xe-->
+        <menuitem id ="phuongtien_root"
+                  name ="Phương tiện"
+                  parent= "module_root"
+                  sequence="4"/>
+        <!--Nhân viên-->
+        <menuitem id ="nv_root"
+                  name ="Nhân viên"
+                  parent= "module_root"
+                  sequence="5"/>
     </data>
 </odoo>
