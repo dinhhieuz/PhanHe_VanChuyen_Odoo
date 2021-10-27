@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="phieu_no_action" model="ir.actions.act_window">
+            <field name="name"> Danh sách phiếu giao không có shipper</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{}</field>
+            <field name="domain">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new delivery order !
+                </p>
+            </field>
+        </record>
+        <menuitem id="phieu_no"
+                   name="Chưa có shipper"
+                   parent="module_kho"
+                   action = "phieu_no_action"
+                   sequence="6"/>
+
+    </data>
+</odoo>
