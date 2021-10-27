@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<!--    increase +1 ID shipper -->
     <data noupdate ="1">
         <record id="seq_module_shipper" model="ir.sequence">
             <field name="name">Shipper Sequence </field>

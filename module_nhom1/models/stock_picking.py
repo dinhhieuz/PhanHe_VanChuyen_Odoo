@@ -16,7 +16,3 @@ class stock(models.Model):
 
     # IDnguoitao_phieu = fields.One2many(comodel_name='res.users', inverse_name='rel_id')
 
-    # describing customer
-    # tự động sinh mã khi tạo (làm sau)
-
-    # id_khachhang = fields.One2many(comodel_name='res.users', inverse_name='rel_id')
