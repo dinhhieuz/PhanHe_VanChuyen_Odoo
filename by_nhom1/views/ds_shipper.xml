@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="shipper_action" model="ir.actions.act_window">
+            <field name="name">DANH SÁCH SHIPPER</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shipper.nhom1</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new shipper!
+                </p>
+            </field>
+        </record>
+        <menuitem id="module_shipper"
+                   name="Quản lí Shipper"
+                   parent="shipper_root"
+                   action = "shipper_action"
+                   sequence="10"/>
+<!--        <menuitem id="module_shipper"-->
+<!--                   name="Danh sách Shipper"-->
+<!--                   parent="module_shipper"-->
+<!--                   action = "shipper_action"-->
+<!--                   sequence="11"/>-->
+
+    </data>
+</odoo>
