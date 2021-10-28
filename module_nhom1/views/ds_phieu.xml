@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="phieu_giao_hang" model="ir.actions.act_window">
+            <field name="name">DANH SÁCH PHIẾU GIAO HÀNG</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Phiếu Giao Hàng
+                </p>
+            </field>
+        </record>
         <record id="mypet_plus_my_pet_form_view" model="ir.ui.view">
             <field name="name">mypet.plus.my.pet.form.view</field>
             <field name="model">stock.picking</field>
@@ -23,26 +34,26 @@
                     <field name="tinhtrang_phieu"/>
                     <field name="nguoitao_phieu"/>
                     <field name="ngaytao_phieu"/>
-
                 </field>
             </field>
         </record>
-
-        <record id="phieu_giao_hang" model="ir.actions.act_window">
-            <field name="name">Phiếu giao hàng</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">stock.picking</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Phiếu Giao Hàng
-                </p>
-            </field>
-        </record>
-        <menuitem id="shipper54566_dang"
-                  name="Phiếu giao hàng"
+        <!--Phiếu giao hàng-->
+        <menuitem id="module_kho"
+                    name="Quản lí Phiếu giao hàng"
+                    parent="kho_root"
+                    action = "phieu_giao_hang"
+                    sequence="8"/>
+        <menuitem id="phieu_giaohang"
+                  name=" Danh sách Phiếu giao hàng"
                   parent="module_kho"
                   action="phieu_giao_hang"
-                  sequence="4"/>
+                  sequence="7"/>
+        <!--Lấy bỏ qua views chính nhé!-->
+        <menuitem id="module_xe"
+                   name="Quản lí Phương Tiện"
+                   parent="phuongtien_root"
+                   action = "phieu_giao_hang"
+                   sequence="10"/>
+
     </data>
 </odoo>
