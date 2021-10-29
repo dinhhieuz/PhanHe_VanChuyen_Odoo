@@ -6,7 +6,7 @@ class nhom1(models.Model):
 
     name = fields.Char(string='Mã SP', required=True, copy=False, readonly=True,
                        default=lambda seft: _('New'))
-    ten = fields.Char(string='Tên nhân viên',required = True)
+    ten = fields.Char(string='Tên Shipper', required = True)
     avatar = fields.Binary("Avatar")
     ngaysinh = fields.Date("Ngày sinh")
     diachi = fields.Text("Địa chỉ nhà")
@@ -18,6 +18,11 @@ class nhom1(models.Model):
     trangthai = fields.Selection([('danggiaohang', 'Đang giao hàng'), ('chogiaohang', 'Chờ đơn hàng')], string='Trạng thái', default='')
     nameprivate = fields.Char('Tên công việc')
     image = fields.Binary("Hình ảnh đơn hàng")
+
+    _sql_constraints = [
+        ('cmnd', 'unique (cmnd)', 'CMND đã tồn tại, vui lòng nhập khác!!!')
+    ]
+
 
     def custom_remove(self):
             for module in self:

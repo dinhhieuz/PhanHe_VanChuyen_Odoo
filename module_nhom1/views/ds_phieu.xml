@@ -17,11 +17,44 @@
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//group[1]/group[1]/field[@name='picking_type_id']" position="attributes">
+<!--                    <attribute name="default">Delivery Orders</attribute>-->
+<!--                    <attribute name="readonly">1</attribute>-->
+                </xpath>
+<!--                <field name="arch" type="xml">-->
+<!--                    <xpath expr="//form[@string='Transfer']" position="attributes">-->
+<!--                        <attribute name="create">false</attribute>-->
+<!--                    </xpath>-->
+<!--                </field>-->
+                <xpath expr="//group" position="after">
+                    <group>
+                        <group>
+                            <field name="tinhtrang_phieu"/>
+                            <field name="ngaytao_phieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                            <field name="id_nhanvien_taophieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="id_shipper_phieu"
+                                       domain="[('trangthai','=','chogiaohang'),('covid','=',True)]"
+                                       attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                            </group>
+                            <group>
+                                <field name="ten" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                <field name="gioitinh" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                <field name="covid" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                            </group>
 
-                <xpath expr="//group[1]/group[2]" position="inside">
-                    <field name="tinhtrang_phieu"/>
-                    <field name="nguoitao_phieu"/>
-                    <field name="ngaytao_phieu"/>
+                            <group>
+                                <field name="id_xe_phieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                            </group>
+                            <group>
+                                <h5>Biển số xe</h5>
+                                <h5>Trọn tải</h5>
+                                <h5>Bảo hiểm xe</h5>
+                            </group>
+                        </group>
+                    </group>
                 </xpath>
             </field>
         </record>
@@ -31,10 +64,20 @@
             <field name="inherit_id" ref="stock.vpicktree"/>
             <field name="arch" type="xml">
                 <field name="scheduled_date" position="after">
-                    <field name="tinhtrang_phieu"/>
-                    <field name="nguoitao_phieu"/>
+                    <field name="tinhtrang_phieu"
+                           widget="badge"
+                           decoration-success="tinhtrang_phieu == 'done'"
+                           decoration-warning="tinhtrang_phieu == 'doing'"
+                           decoration-danger="tinhtrang_phieu == 'delay'"
+                           decoration-info="tinhtrang_phieu == 'wait'"/>
                     <field name="ngaytao_phieu"/>
+                    <field name="id_shipper_phieu"/>
+                    <field name="id_nhanvien_taophieu"/>
+                    <field name="id_xe_phieu"/>
                 </field>
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
             </field>
         </record>
         <!--Phiếu giao hàng-->
