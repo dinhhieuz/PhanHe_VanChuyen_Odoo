@@ -61,7 +61,7 @@
                     <field name="ten"/>
                     <field name="gioitinh"/>
                     <field name ="trangthai"/>
-                    <button name="custom_remove" type="object" string="Remove" class="oe_highlight"/>
+<!--                    <button name="custom_remove" type="object" string="Remove" class="oe_highlight"/>-->
                 </tree>
             </field>
         </record>

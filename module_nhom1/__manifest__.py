@@ -20,6 +20,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',
+        'data/phuongtien.xml',
         'views/module_nhom1.xml',
         'views/dang.xml',
         'views/cho.xml',
@@ -27,7 +28,8 @@
         'views/ds_phieu.xml',
         'views/phieu_no.xml',
         'views/phieu_yes.xml',
-        'views/nhanvien.xml'
+        'views/nhanvien.xml',
+        'views/ds_phuongtien.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

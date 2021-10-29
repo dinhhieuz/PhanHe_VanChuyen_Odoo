@@ -18,8 +18,7 @@
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//group[1]/group[1]/field[@name='picking_type_id']" position="attributes">
-<!--                    <attribute name="default">Delivery Orders</attribute>-->
-<!--                    <attribute name="readonly">1</attribute>-->
+                    <attribute name="readonly">0</attribute>
                 </xpath>
 <!--                <field name="arch" type="xml">-->
 <!--                    <xpath expr="//form[@string='Transfer']" position="attributes">-->
@@ -76,7 +75,7 @@
                     <field name="id_xe_phieu"/>
                 </field>
                 <xpath expr="/tree" position="attributes">
-                    <attribute name="create">false</attribute>
+                    <attribute name="create">true</attribute>
                 </xpath>
             </field>
         </record>
@@ -91,12 +90,6 @@
                   parent="module_kho"
                   action="phieu_giao_hang"
                   sequence="7"/>
-        <!--Lấy bỏ qua views chính nhé!-->
-        <menuitem id="module_xe"
-                   name="Quản lí Phương Tiện"
-                   parent="phuongtien_root"
-                   action = "phieu_giao_hang"
-                   sequence="10"/>
 
     </data>
 </odoo>

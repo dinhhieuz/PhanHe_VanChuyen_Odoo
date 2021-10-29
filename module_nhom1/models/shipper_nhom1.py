@@ -24,10 +24,10 @@ class nhom1(models.Model):
     ]
 
 
-    def custom_remove(self):
-            for module in self:
-                module.unlink()
-            pass
+    # def custom_remove(self):
+    #         for module in self:
+    #             module.unlink()
+    #         pass
 
     @api.model
     def create(self, vals):

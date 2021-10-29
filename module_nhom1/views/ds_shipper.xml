@@ -21,7 +21,7 @@
                    name="Danh sách shipper"
                    parent="module_shipper"
                    action = "shipper_action"
-                   sequence="12"/>
+                   sequence="4"/>
 
     </data>
 </odoo>
