@@ -15,7 +15,7 @@ class nhom1(models.Model):
     mota = fields.Text('Mô tả công việc')
     covid = fields.Boolean('Đã tiêm Covid', default=False)
     gioitinh = fields.Selection([('nam', 'Nam'), ('nu', 'Nữ')], string='Giới tính', default='nam')
-    trangthai = fields.Selection([('danggiaohang', 'Đang giao hàng'), ('chogiaohang', 'Chờ đơn hàng')], string='Trạng thái', default='')
+    trangthai = fields.Selection([('chogiaohang', 'Chờ đơn hàng'), ('danggiaohang', 'Đang giao hàng')], string='Trạng thái', default='')
     nameprivate = fields.Char('Tên công việc')
     image = fields.Binary("Hình ảnh đơn hàng")
 
@@ -23,6 +23,16 @@ class nhom1(models.Model):
         ('cmnd', 'unique (cmnd)', 'CMND đã tồn tại, vui lòng nhập khác!!!')
     ]
 
+    # show compere name with id of employee
+    def name_get(self):
+        result = []
+        for record in self:
+            if len(record.ten) == 0:
+                name = record.name
+            else:
+                name = f"{record.ten} [{record.name}]"
+            result.append((record.id, name))
+        return result
 
     # def custom_remove(self):
     #         for module in self:

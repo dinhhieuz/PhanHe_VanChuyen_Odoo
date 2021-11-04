@@ -26,32 +26,34 @@
 <!--                    </xpath>-->
 <!--                </field>-->
                 <xpath expr="//group" position="after">
-                    <group>
+                    <group string="Thông tin liên quan">
                         <group>
-                            <field name="tinhtrang_phieu"/>
-                            <field name="ngaytao_phieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
-                            <field name="id_nhanvien_taophieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                <field name="tinhtrang_phieu"/>
+                                <field name="ngaytao_phieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                <field name="id_nhanvien_taophieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait'),('name', '!=', None)]}"/>
                         </group>
                         <group>
-                            <group>
-                                <field name="id_shipper_phieu"
-                                       domain="[('trangthai','=','chogiaohang'),('covid','=',True)]"
-                                       attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
-                            </group>
-                            <group>
-                                <field name="ten" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
-                                <field name="gioitinh" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
-                                <field name="covid" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
-                            </group>
+                                <group>
+                                    <field name="id_shipper_phieu"
+                                           domain="[('trangthai','=','chogiaohang'),('covid','=',True), ('ten','!=', None)]"
+                                           attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+    <!--                            </group>-->
+    <!--                            <group>-->
+                                    <field name="gioitinh" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                    <field name="sdt" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                    <field name="covid" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                </group>
 
-                            <group>
-                                <field name="id_xe_phieu" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
-                            </group>
-                            <group>
-                                <h5>Biển số xe</h5>
-                                <h5>Trọn tải</h5>
-                                <h5>Bảo hiểm xe</h5>
-                            </group>
+                                <group>
+                                    <field name="id_xe_phieu"
+                                           domain="[('tinhtrang', '=', 'chohoatdong'), ('bienso', '!=', None)]"
+                                           attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+    <!--                            </group>-->
+    <!--                            <group>-->
+                                    <field name="loaipt" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                    <field name="trongtai" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                    <field name="mabh" readonly="1" attrs="{'invisible':[('tinhtrang_phieu','=','wait')]}"/>
+                                </group>
                         </group>
                     </group>
                 </xpath>

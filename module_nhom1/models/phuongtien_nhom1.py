@@ -19,29 +19,41 @@ class phuongtien(models.Model):
                        default=lambda seft: _('New'))
     ngaymua = fields.Date('Ngày mua')
     giamua = fields.Float('Giá mua')
-    loaipt = fields.Selection([('container', 'Container'), ('xetaithung', 'Xe tải thùng')], string='Loại phương tiện', default='',required=True)
+    loaipt = fields.Selection([('container', 'Container'), ('xetaithung', 'Xe tải thùng')], string='Loại phương tiện', default='', required=False)
     trongtai = fields.Selection([
-        ('2t', '2 tấn '),
+        ('2t', '2 tấn'),
         ('5t', '5 tấn'),
-        ('7t', '7 tấn '),
+        ('7t', '7 tấn'),
         ('12-13t', '12-13 tấn'),
         ('21-22t', '21-22 tấn'),
         ('28-30t', '28-30 tấn')
     ], string='Trọng tải', default='')
     mauxe = fields.Char(string='Màu xe')
-    bienso = fields.Char(string='Biển số xe',required=True, length=8)
+    bienso = fields.Char(string='Biển số xe', required=True, size=10)
     diachidk = fields.Char(string='Địa chỉ đăng ký')
     avatar = fields.Binary('Hình ảnh xe')
     mabh = fields.Char(string='Mã số bảo hiểm')
     ngaycap = fields.Date('Ngày cấp')
     bh_image = fields.Binary('Hình ảnh bảo hiểm')
-    tinhtrang = fields.Selection([('danghoatdong', 'Đang hoạt động'), ('chohoatdong', 'Chờ hoạt động')], string='Tình trạng', default='', required=True)
+    tinhtrang = fields.Selection([('chohoatdong', 'Chờ hoạt động'),('danghoatdong', 'Đang hoạt động'), ('dangbaotri', 'Đang bảo trì')], string='Tình trạng', default='chohoatdong', required=False)
     history = fields.One2many(comodel_name='baotri.nhom1', inverse_name='id', string='Lịch sử bảo trì')
 
-    def custom_remove(self):
-            for module in self:
-                module.unlink()
-            pass
+    # def custom_remove(self):
+    #         for module in self:
+    #             module.unlink()
+    #         pass
+
+    def name_get(self):
+        result = []
+        for record in self:
+            if len(record.bienso) == 0:
+                name = record.name
+            else:
+                name = f"{record.bienso}"
+            result.append((record.id, name))
+        return result
+
+
 
     @api.model
     def create(self, vals):
