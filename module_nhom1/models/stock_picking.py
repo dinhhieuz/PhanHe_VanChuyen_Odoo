@@ -65,4 +65,11 @@ class stock(models.Model):
         self.env.cr.execute(query_init_traffic)
 
 
+    @api.constrains('tinhtrang_phieu','id_shipper_phieu')
+    def onchange_status_shipper(self):
+        if self.tinhtrang_phieu == 'doing':
+            get_id_shipper = str(self.id_shipper_phieu).strip('shipper.nhom1(,)')
+            self.env.cr.execute("""Update shipper_nhom1 set trangthai='danggiaohang' where id = """+get_id_shipper)
+
+
     # id_khachhang = fields.One2many(comodel_name='res.users', inverse_name='rel_id')
