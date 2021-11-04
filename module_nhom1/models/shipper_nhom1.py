@@ -11,11 +11,11 @@ class nhom1(models.Model):
     ngaysinh = fields.Date("Ngày sinh")
     diachi = fields.Text("Địa chỉ nhà")
     sdt = fields.Char("Số điện thoại")
-    cmnd = fields.Char("CCMND")
+    cmnd = fields.Char("CMND")
     mota = fields.Text('Mô tả công việc')
     covid = fields.Boolean('Đã tiêm Covid', default=False)
     gioitinh = fields.Selection([('nam', 'Nam'), ('nu', 'Nữ')], string='Giới tính', default='nam')
-    trangthai = fields.Selection([('chogiaohang', 'Chờ đơn hàng'), ('danggiaohang', 'Đang giao hàng')], string='Trạng thái', default='')
+    trangthai = fields.Selection([('danggiaohang', 'Đang giao hàng'), ('chogiaohang', 'Chờ đơn hàng')], string='Trạng thái', default='')
     nameprivate = fields.Char('Tên công việc')
     image = fields.Binary("Hình ảnh đơn hàng")
 

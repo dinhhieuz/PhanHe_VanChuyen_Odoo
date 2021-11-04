@@ -7,7 +7,7 @@
             <field name="name">DANH SÁCH PHƯƠNG TIỆN</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">phuongtien.nhom1</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Create a new vehicle!
@@ -17,7 +17,7 @@
 
         #Tạo action cho models fields Chờ hoạt động
         <record id="phuongtien_cho_action" model="ir.actions.act_window">
-            <field name="name"> Danh sách chờ hoạt động</field>
+            <field name="name">Phương tiện - Chờ hoạt động</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">phuongtien.nhom1</field>
             <field name="view_mode">tree,kanban,form</field>
@@ -32,7 +32,7 @@
 
         #Tạo action cho models fields Đang hoạt động
         <record id="phuongtien_dang_action" model="ir.actions.act_window">
-            <field name="name"> Danh sách đang hoạt động</field>
+            <field name="name">Phương tiện - Đang hoạt động</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">phuongtien.nhom1</field>
             <field name="view_mode">tree,kanban,form</field>
@@ -164,22 +164,23 @@
                    name="Quản lí Phương Tiện"
                    parent="phuongtien_root"
                    action = "phuong_tien_action"
-                   sequence="13"/>
+                   sequence="14"/>
         <menuitem id="phuongtien_ds"
                    name="Danh sách phương tiện"
                    parent="module_phuongtien"
                    action = "phuong_tien_action"
-                   sequence="14"/>
-        <menuitem id="phuongtien_cho"
-                   name="Chờ hoạt động"
-                   parent="module_phuongtien"
-                   action = "phuongtien_cho_action"
                    sequence="15"/>
         <menuitem id="phuongtien_dang"
                    name="Đang hoạt động"
                    parent="module_phuongtien"
                    action = "phuongtien_dang_action"
                    sequence="16"/>
+        <menuitem id="phuongtien_cho"
+                   name="Chờ hoạt động"
+                   parent="module_phuongtien"
+                   action = "phuongtien_cho_action"
+                   sequence="17"/>
+
     </data>
 
     <data>
@@ -225,7 +226,7 @@
             <field name="name">LỊCH SỬ BẢO TRÌ</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">baotri.nhom1</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Create a new history!
