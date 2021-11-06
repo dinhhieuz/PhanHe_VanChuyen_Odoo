@@ -1,3 +1,4 @@
+#                  C:\odoo\server\venv\Scripts\python.exe C:/odoo/server/odoo-bin -c C:\odoo\server\odoo.conf
 # -*- coding: utf-8 -*-
 {
     'name': "SHIPPER",
