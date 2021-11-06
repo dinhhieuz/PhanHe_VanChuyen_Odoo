@@ -88,17 +88,10 @@
                     <field name="name"/>
                     <field name="ten"/>
                     <field name="gioitinh"/>
-<<<<<<< HEAD
                     <field name ="trangthai"/>
 <!--                    <button name="custom_remove" type="object" string="Remove" class="oe_highlight"/>-->
                 </tree>
             </field>
-=======
-<!--                    <button name="custom_remove" type="object" string="Remove" class="oe_highlight"/>-->
-                </tree>
-            </field>
-            
->>>>>>> main
         </record>
 
         <record id ="module_search_view" model = "ir.ui.view">

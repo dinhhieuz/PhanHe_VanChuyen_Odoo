@@ -19,7 +19,7 @@
     'depends': ['base','stock','board'],
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         'data/data.xml',
         'data/phuongtien.xml',
         # 'views/dashboard.xml',
@@ -28,7 +28,9 @@
         'views/phuongtien.xml',
         'views/nhanvien.xml',
         'views/setting.xml',
-        'views/sanpham.xml'
+        'views/sanpham.xml',
+        'reports/report.xml',
+        'reports/phieugiaohangreport.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
