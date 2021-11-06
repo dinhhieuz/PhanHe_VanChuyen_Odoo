@@ -46,8 +46,8 @@ class stock(models.Model):
 
     def create_shipper_employee_main(self):
         # Khởi tạo shipper để tránh null dữ liệu khi confirm ở model SALES
-        query_init_shipper = """INSERT INTO shipper_nhom1 (id, name, ten) \
-                            SELECT * FROM (SELECT 1 AS id, '' AS name, '' AS ten) AS tmp \
+        query_init_shipper = """INSERT INTO shipper_nhom1 (id, name, ten, idbanglai) \
+                            SELECT * FROM (SELECT 1 AS id, '' AS name, '' AS ten, '' AS idbanglai) AS tmp \
     			            WHERE NOT exists ( SELECT id FROM shipper_nhom1 WHERE id = 1 limit 1 );"""
         self.env.cr.execute(query_init_shipper)
 
