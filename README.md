@@ -8,8 +8,8 @@
 - Đây là một dự án nhỏ của nhóm nhằm mục đích phụ vụ cho bài tập cá nhân, mọi người có thể tham khảo
 
 ## 2. Ngày thực hiện: 
-  <b>06/10/2021</b> -> <b>06/10/2021</b>
-
+  <b>06/10/2021</b> -> <b>14//2021</b>
+                    Done
 ## 3. Người thực hiện: 
 1. Trần Đình Hiếu 
 2. Đỗ Đức Anh 
