@@ -7,6 +7,11 @@
   + Modude Vân chuyển, shipper, phương tiện (Phiếu giao hàng, kế thừa, @API, mix Group by, Sereach, Báo cáo PDF, Dashboard, xữ lý Query PostgreSQL,...)
   + Modude Nhân viên, Cấu hình, báo cáo (Kế thừa odoo)
 - Ngôn ngữ sử dụng: Python, XML, ... 
+- Model kế thừa: 
+  + Inventory
+  + Sales
+  + HR
+  + Dashboard
 - Đây là một dự án nhỏ của nhóm nhằm mục đích phụ vụ cho bài tập cá nhân, mọi người có thể tham khảo
 
 ## 2. Ngày thực hiện: 
