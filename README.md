@@ -1,7 +1,6 @@
 <h1 style="color:red;"> Phân hệ vận chuyển - Odoo 14 </h1>
 
-<h2>Mô tả:</2>
-
+## Mô tả: 
 - Model Vận chuyển là một model được nhóm phát triển với mục đích quản lý và kiểm soát, tối ưu nguồn lực vận chuyển của công ty MINAMILK
 - Mô hình được kế thừa với Model Kho, từ đó phát triển thêm field mới và xây dựng Model xữ lý nghiệp vụ vận chuyển
 - Nội dung bao gồm: 
